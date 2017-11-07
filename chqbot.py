@@ -49,7 +49,7 @@ s=sched.scheduler(time.time, time.sleep)
 def pullthatshit(sc):
   for submission in submissions:
     person=str(submission.author)
-    print(person)
+    print(person+"ok")
       
     #comment=comment.comments[0]
     
