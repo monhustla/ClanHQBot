@@ -82,7 +82,6 @@ def pullthatshit(sc):
     finally:
       if cur is not None:
         conn.commit()
-        print("Something is wrong 2")
         cur.close()
             
         
@@ -109,6 +108,7 @@ def pullthatshit(sc):
         
         except BaseException:
           if cur is not None:
+            print("Insert did not work")
             conn.rollback()
             cur.close()
             return
