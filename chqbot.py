@@ -100,8 +100,9 @@ def pullthatshit(sc):
     try:
       cur= None
       cur= conn.cursor()
-      cur.execute("""INSERT INTO reddit_userinfo(username, info_one, info_two, info_three, info_four, info_five)
-                      VALUES(%(username)s, %(info_one)s, %(info_two)s, %(info_three)s, %(info_four)s, %(info_five)s)""")
+      cur.execute("""INSERT INTO reddit_userinfo (username, info_one, info_two, info_three, info_four, info_five)
+                     VALUES (%s, %s, %s, %s, %s, %s)""",
+                     (person, info_one, info_two, info_three, info_four, info_five))
 
       conn.commit()
       print("you got it bud")
