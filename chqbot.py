@@ -58,7 +58,7 @@ def pullthatshit(sc):
         
     try:
       cur= None
-      cur=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+      cur= conn.cursor()
       cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
       rows=cur.fetchall()
       conn.commit()
