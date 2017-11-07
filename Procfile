@@ -1,1 +1,1 @@
-web: run-program gunicorn --workers=4 --timeout 25 --max-requests 200 chqbot:app
+web: gunicorn --workers=4 --timeout 25 --max-requests 200 chqbot:app
