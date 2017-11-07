@@ -65,7 +65,7 @@ def pullthatshit(sc):
 
       #The user exists in the database and a result was returned
       for row in rows:
-        username=row['username']
+        username=row[0]
         print(username)
 
 
