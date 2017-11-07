@@ -85,44 +85,44 @@ def pullthatshit(sc):
         cur.close()
             
         
-        username=person
-        
-        info_one="Whatever"
-        
-        info_two="Whatever"
-        
-        info_three="Whatever"
-        
-        info_four="Whatever"
-        
-        info_five="Whatever"
-        
-        try:
-          cur= None
-          cur= conn.cursor()
-          cur.execute("""INSERT INTO reddit_userinfo(username, info_one, info_two, info_three, info_four, info_five)
-                          VALUES(%(username)s, %(info_one)s, %(info_two)s, %(info_three)s, %(info_four)s, %(info_five)s)""")
-                          
-          conn.commit()
-          print("you got it bud")
-        
-        except BaseException as e:
-          if cur is not None:
-            print(e+"Insert did not work")
-            conn.rollback()
-            cur.close()
-            return
-         
-        finally:
-          if cur is not None:
-            cur.close()
-        return    
-        
-    #if any(x in text.lower() for x in keyword):
-        #print(text+'\n'+'\n'+str(nice)+'\n'+person)
-            #comment.reply('Mars is awesome')
-        #time.sleep(60)
-    s.enter(5,1, pullthatshit, (sc,))
+    username=person
+
+    info_one="Whatever"
+
+    info_two="Whatever"
+
+    info_three="Whatever"
+
+    info_four="Whatever"
+
+    info_five="Whatever"
+
+    try:
+      cur= None
+      cur= conn.cursor()
+      cur.execute("""INSERT INTO reddit_userinfo(username, info_one, info_two, info_three, info_four, info_five)
+                      VALUES(%(username)s, %(info_one)s, %(info_two)s, %(info_three)s, %(info_four)s, %(info_five)s)""")
+
+      conn.commit()
+      print("you got it bud")
+
+    except BaseException as e:
+      if cur is not None:
+        print(e+"Insert did not work")
+        conn.rollback()
+        cur.close()
+        return
+
+    finally:
+      if cur is not None:
+        cur.close()
+    return    
+
+#if any(x in text.lower() for x in keyword):
+    #print(text+'\n'+'\n'+str(nice)+'\n'+person)
+        #comment.reply('Mars is awesome')
+    #time.sleep(60)
+s.enter(5,1, pullthatshit, (sc,))
 s.enter(80, 1, pullthatshit, (s,))
 s.run()
 
