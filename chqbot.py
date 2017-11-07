@@ -71,7 +71,7 @@ def pullthatshit(sc):
       print (e)
       if cur is not None:
         conn.rollback()
-        print("Something is wrong")
+        print(e+"Something is wrong")
         cur.close()
 
     finally:
