@@ -117,7 +117,7 @@ def pullthatshit(sc):
         #print(text+'\n'+'\n'+str(nice)+'\n'+person)
             #comment.reply('Mars is awesome')
         #time.sleep(60)
-    s.enter(10,1, pullthatshit, (sc,))
+    s.enter(5,1, pullthatshit, (sc,))
 s.enter(80, 1, pullthatshit, (s,))
 s.run()
 #except:
