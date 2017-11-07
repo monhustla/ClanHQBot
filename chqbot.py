@@ -48,7 +48,7 @@ submissions=subreddit.new(limit=1)
 s=sched.scheduler(time.time, time.sleep)
 def pullthatshit(sc):
   for submission in submissions:
-    person=submission.author
+    person=str(submission.author)
     print(person)
       
     #comment=comment.comments[0]
