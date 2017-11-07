@@ -1,3 +1,4 @@
 praw
 gunicorn
 psycopg2
+flask==0.12.2
