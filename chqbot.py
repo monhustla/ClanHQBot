@@ -106,9 +106,9 @@ def pullthatshit(sc):
           conn.commit()
           print("you got it bud")
         
-        except BaseException:
+        except BaseException as e:
           if cur is not None:
-            print("Insert did not work")
+            print(e+"Insert did not work")
             conn.rollback()
             cur.close()
             return
