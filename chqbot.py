@@ -14,14 +14,15 @@ subreddit=bot.subreddit('space')
 comments=subreddit.stream.submissions()
 keyword=['mars']
 
-try:
+def recruiting_check():
+  try:
     for comment in comments:
-        text=comment.title
-        info=comment.created
-        nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
-        if any(x in text.lower() for x in keyword):
-            print(text+'/n'+'/n'+str(nice))
-            comment.reply('Mars is awesome')
+      text=comment.title
+      info=comment.created
+      nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
+      if any(x in text.lower() for x in keyword):
+        print(text+'/n'+'/n'+str(nice))
+        comment.reply('Mars is awesome')
     time.sleep(60)
             
           
