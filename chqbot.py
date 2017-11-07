@@ -14,12 +14,17 @@ subreddit=bot.subreddit('space')
 comments=subreddit.stream.submissions()
 keyword=['mars']
 
-
-for comment in comments:
-    text=comment.title
-    info=comment.created
-    nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
-    if any(x in text.lower() for x in keyword):
-           print(text+'/n'+'/n'+str(nice))
-           comment.reply('Mars is awesome')
-           time.sleep(60)
+try:
+    for comment in comments:
+        text=comment.title
+        info=comment.created
+        nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
+        if any(x in text.lower() for x in keyword):
+            print(text+'/n'+'/n'+str(nice))
+            comment.reply('Mars is awesome')
+    time.sleep(60)
+            
+          
+    #author=comments.author
+    #if any(x in text.lower() for x in keyword):
+    #    print (text+'/n'+'/n'+'yay''/n')
