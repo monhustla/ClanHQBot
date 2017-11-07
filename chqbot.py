@@ -36,7 +36,7 @@ subreddit=bot.subreddit('space')
 
 submission=subreddit.stream.submissions()
 #keyword=['mars']
-comment=submission.comments
+comment=submission.comments.list()
 #author=comment.author
 
 #try:
