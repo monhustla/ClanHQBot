@@ -46,7 +46,7 @@ submissions=subreddit.new(limit=1)
 
 #try:
 #s=sched.scheduler(time.time, time.sleep)
-def pullthatshit(sc):
+def pullthatshit():
   for submission in submissions:
     person=str(submission.author)
     print(person+"ok")
