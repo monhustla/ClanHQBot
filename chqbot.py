@@ -5,6 +5,7 @@ import sched
 import psycopg2
 import psycopg2.extras
 import os
+import urlparse
 
 bot=praw.Reddit(user_agent='MySimpleBot v0.1',
                 client_id='tMmbJ410gthhGw',
