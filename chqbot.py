@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 import praw
 import datetime
 import time
-import sched
+import schedule
 import psycopg2
 import psycopg2.extras
 import os
@@ -45,7 +45,7 @@ submissions=subreddit.new(limit=1)
 #author=comment.author
 
 #try:
-s=sched.scheduler(time.time, time.sleep)
+#s=sched.scheduler(time.time, time.sleep)
 def pullthatshit(sc):
   for submission in submissions:
     person=str(submission.author)
@@ -123,9 +123,15 @@ def pullthatshit(sc):
     #print(text+'\n'+'\n'+str(nice)+'\n'+person)
         #comment.reply('Mars is awesome')
     #time.sleep(60)
-  s.enter(5,1, pullthatshit, (sc,))
-s.enter(80, 1, pullthatshit, (s,))
-s.run()
+  #s.enter(5,1, pullthatshit, (sc,))
+#s.enter(80, 1, pullthatshit, (s,))
+#s.run()
+
+
+schedule.every(2).minutes.do(pullthatshit)
+while 1:
+  schedule.run_pending()
+  time.sleep(1)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
