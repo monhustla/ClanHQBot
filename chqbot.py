@@ -2,6 +2,8 @@ import praw
 import datetime
 import time
 import sched
+import psycopg2
+import psycopg2.extras
 
 bot=praw.Reddit(user_agent='MySimpleBot v0.1',
                 client_id='tMmbJ410gthhGw',
@@ -45,6 +47,60 @@ def pullthatshit(sc):
     #person=submission.comments[0].author
         nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
         print(text+'\n'+'\n'+str(nice)+'\n'+person)
+        try:
+          cur= None
+          cur=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+          cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
+          rows=cur.fetchall()
+          conn.commit()
+          
+          #The user exists in the database and a result was returned
+          for row in rows:
+            username=row['username']
+            print(username)
+            
+            
+          else:
+            username=person
+            
+        except BaseException as e:
+          print (e)
+          if cur is not None:
+            conn.rollback()
+            print("Something is wrong")
+            cur.close()
+            
+        finally:
+          if cur is not None:
+            conn.commit()
+            print("Something is wrong 2")
+            cur.close()
+            
+        
+        username=person
+        
+        info_one="Whatever"
+        
+        info_two="Whatever"
+        
+        info_three="Whatever"
+        
+        info_four="Whatever"
+        
+        info_five="Whatever"
+        
+        try:
+          cur= None
+          cur= conn.cursor()
+          cur.execute("""INSERT INTO reddit_userinfo(username, info_one, info_two, info_three, info_four, info_five)
+                          VALUES(%(username)s, %(info_one)s, %(info_two)s, %(info_three)s, %(info_four)s, %(info_five)s))
+                          
+          conn.commit()
+          print("you got it bud")
+        
+        except BaseException:
+        
+        
     #if any(x in text.lower() for x in keyword):
         #print(text+'\n'+'\n'+str(nice)+'\n'+person)
             #comment.reply('Mars is awesome')
