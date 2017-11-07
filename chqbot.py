@@ -34,51 +34,51 @@ if db_url:
 
 subreddit=bot.subreddit('space')
 
-submission=subreddit.stream.submissions()
+submissions=subreddit.new(limit=1)
 #keyword=['mars']
-comment=submission.comments.list()
+
 #author=comment.author
 
 #try:
 s=sched.scheduler(time.time, time.sleep)
 def pullthatshit(sc):
-    for comment[0] in submission:
-        text=comment.title
-        info=comment.created
-        person=comment.author.name
+  for submission in submissions:
+    person=submission.author
+    print(person)
+      
     #comment=comment.comments[0]
     
     #person=submission.comments[0].author
-        nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
-        print(text+'\n'+'\n'+str(nice)+'\n'+person)
-        try:
-          cur= None
-          cur=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-          cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
-          rows=cur.fetchall()
-          conn.commit()
-          
-          #The user exists in the database and a result was returned
-          for row in rows:
-            username=row['username']
-            print(username)
-            
-            
-          else:
-            username=person
-            
-        except BaseException as e:
-          print (e)
-          if cur is not None:
-            conn.rollback()
-            print("Something is wrong")
-            cur.close()
-            
-        finally:
-          if cur is not None:
-            conn.commit()
-            print("Something is wrong 2")
-            cur.close()
+        #nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
+        
+    try:
+      cur= None
+      cur=conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+      cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
+      rows=cur.fetchall()
+      conn.commit()
+
+      #The user exists in the database and a result was returned
+      for row in rows:
+        username=row['username']
+        print(username)
+
+
+      else:
+        username=person
+
+    except BaseException as e:
+      print (e)
+      if cur is not None:
+        conn.rollback()
+        print("Something is wrong")
+        cur.close()
+
+    finally:
+      if cur is not None:
+        conn.commit()
+        print("Something is wrong 2")
+        cur.close()
             
         
         username=person
