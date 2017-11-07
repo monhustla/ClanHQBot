@@ -1,13 +1,14 @@
 import praw
 import datetime
 import time
+import os
 
 
 bot=praw.Reddit(user_agent='MySimpleBot v0.1',
                 client_id='tMmbJ410gthhGw',
                 client_secret='WREWn4OgA4I3Wl4XVxspVleWDbg',
-                username='Clan_HQ',
-                password='Bboy123!')
+                username=myname,
+                password=password1)
 
 subreddit=bot.subreddit('space')
 
