@@ -9,6 +9,23 @@ bot=praw.Reddit(user_agent='MySimpleBot v0.1',
                 username='Clan_HQ',
                 password='Bboy123!')
 
+db_url = os.environ.get('DATABASE_URL', None)
+if db_url:
+    url = urlparse.urlparse(db_url)
+    dbname = url.path[1:]
+    user = url.username
+    password = url.password
+    host = url.hostname
+    port = url.port
+
+    conn = psycopg2.connect(
+                dbname=dbname,
+                user=user,
+                password=password,
+                host=host,
+                port=port
+                )
+
 subreddit=bot.subreddit('space')
 
 submission=subreddit.stream.submissions()
@@ -19,7 +36,7 @@ submission=subreddit.stream.submissions()
 #try:
 s=sched.scheduler(time.time, time.sleep)
 def pullthatshit(sc):
-    for comment in submission:
+    for comment[0] in submission:
         text=comment.title
         info=comment.created
         person=comment.author.name
