@@ -167,9 +167,11 @@ def pullthatshit():
 #  time.sleep(.2)
 def rerun():
   print("This is a start")
+  time.sleep(5)
   pullthatshit()
 
 while True:
+  time.sleep(5)
   pullthatshit()  
 
 #if __name__ == "__main__":
