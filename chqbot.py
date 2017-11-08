@@ -37,9 +37,7 @@ if db_url:
                 port=port
                 )
 
-subreddit=bot.subreddit('space')
 
-submissions=subreddit.new(limit=1)
 #keyword=['mars']
 
 #author=comment.author
@@ -152,10 +150,12 @@ def pullthatshit():
     finally:
       if cur is not None:
         cur.close()
+      time.sleep(10)  
+      pullthatshit()  
       #time.sleep(.2)
       #schedule.every(.2).minutes.do(pullthatshit)
           
-
+pullthatshit()
 #if any(x in text.lower() for x in keyword):
     #print(text+'\n'+'\n'+str(nice)+'\n'+person)
         #comment.reply('Mars is awesome')
@@ -174,9 +174,9 @@ def pullthatshit():
 #  time.sleep(5)
 #  pullthatshit()
 
-while True:
-  time.sleep(5)
-  pullthatshit()  
+#while True:
+#  time.sleep(5)
+#  pullthatshit()  
 
 if __name__ == "__main__":
 #  pullthatshit()
