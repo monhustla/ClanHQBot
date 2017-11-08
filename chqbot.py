@@ -162,7 +162,8 @@ def pullthatshit():
 #  time.sleep(.2)
 def rerun():
   pullthatshit()
-  
+
+pullthatshit()  
 
 #if __name__ == "__main__":
 #  pullthatshit()
