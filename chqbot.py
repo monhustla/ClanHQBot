@@ -72,7 +72,7 @@ def pullthatshit():
         if dude==person:
           print ("This person exists, exiting")
           break
-          pullthatshit()
+          #pullthatshit()
           
           
           
