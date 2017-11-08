@@ -149,7 +149,7 @@ def pullthatshit():
   #s.enter(5,1, pullthatshit, (sc,))
 #s.enter(80, 1, pullthatshit, (s,))
 #s.run()
-While true:
+while True:
   pullthatshit()
 #schedule.every(.1).minutes.do(pullthatshit)
 #while 1:
