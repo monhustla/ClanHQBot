@@ -150,7 +150,6 @@ def pullthatshit():
 
 
 schedule.every(.2).minutes.do(pullthatshit)
-  return
 while 1:
   schedule.run_pending()
   time.sleep(.2)
