@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+#from __future__ import unicode_literals
 import praw
 import datetime
 import time
@@ -9,10 +9,10 @@ import os
 from os import environ
 import sys
 import urllib.parse as urlparse
-from flask import Flask, request, abort
+#from flask import Flask, request, abort
 
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
 bot=praw.Reddit(user_agent='MySimpleBot v0.1',
                 client_id='tMmbJ410gthhGw',
@@ -164,9 +164,9 @@ while True:
   pullthatshit()
   
 
-if __name__ == "__main__":
-  pullthatshit()
-  app.run(host='0.0.0.0',port=os.environ['PORT'])
+#if __name__ == "__main__":
+#  pullthatshit()
+#  app.run(host='0.0.0.0',port=os.environ['PORT'])
 #except:
 #    print ('This did not work')
     #author=comments.author
