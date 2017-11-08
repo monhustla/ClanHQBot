@@ -153,7 +153,7 @@ schedule.every(.2).minutes.do(pullthatshit)
   return
 while 1:
   schedule.run_pending()
-  time.sleep(.4)
+  time.sleep(.2)
   return
 
 if __name__ == "__main__":
