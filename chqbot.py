@@ -87,9 +87,10 @@ def pullthatshit():
       print ("Index Error")
       if cur is not None:
         conn.rollback()
-        print(e+"Something is wrong")
         cur.close()
-      continue  
+        print(e+"Something is wrong")
+        
+      
 
     finally:
       if cur is not None:
