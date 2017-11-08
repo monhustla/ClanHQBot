@@ -88,6 +88,8 @@ def pullthatshit():
         conn.rollback()
         cur.close()
         print("Something is wrong")
+      return True  
+        
         
       
 
@@ -151,12 +153,14 @@ def pullthatshit():
     finally:
       if cur is not None:
         cur.close()
-      time.sleep(10)  
-      return pullthatshit()
+      time.sleep(10)
+      print("here we are")
+      return True
       #time.sleep(.2)
       #schedule.every(.2).minutes.do(pullthatshit)
           
-pullthatshit()
+while True:
+  pullthatshit()
 #if any(x in text.lower() for x in keyword):
     #print(text+'\n'+'\n'+str(nice)+'\n'+person)
         #comment.reply('Mars is awesome')
