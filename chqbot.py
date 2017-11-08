@@ -77,7 +77,7 @@ def pullthatshit():
         if dude==person:
           print ("This person exists, exiting")
           time.sleep(10)
-          return pullthatshit()
+          return 
           #pullthatshit()
           
           
@@ -145,17 +145,18 @@ def pullthatshit():
         print(e+"Insert did not work")
         conn.rollback()
         cur.close()
+        return True
         
 
     finally:
       if cur is not None:
         cur.close()
       time.sleep(10)  
-      pullthatshit()  
+      return True  
       #time.sleep(.2)
       #schedule.every(.2).minutes.do(pullthatshit)
           
-pullthatshit()
+
 #if any(x in text.lower() for x in keyword):
     #print(text+'\n'+'\n'+str(nice)+'\n'+person)
         #comment.reply('Mars is awesome')
@@ -165,7 +166,7 @@ pullthatshit()
 #s.run()
   #pullthatshit()
 #pullthatshit()  
-#schedule.every(.1).minutes.do(pullthatshit)
+schedule.every(.1).minutes.do(pullthatshit)
 #while 1:
 #  schedule.run_pending()
 #  time.sleep(.2)
