@@ -79,11 +79,13 @@ def pullthatshit():
         conn.rollback()
         print(e+"Something is wrong")
         cur.close()
+      continue  
 
     finally:
       if cur is not None:
         conn.commit()
         cur.close()
+        
                   
           
         
