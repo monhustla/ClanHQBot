@@ -118,7 +118,7 @@ def pullthatshit():
     print("This is a new person, adding them to the database")
         
     username=person
-    reddit.redditor(username).message('Test')
+    bot.redditor(username).message('Test')
 
     info_one="Whatever"
 
