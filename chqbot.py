@@ -46,12 +46,11 @@ submissions=subreddit.new(limit=1)
 
 #try:
 #s=sched.scheduler(time.time, time.sleep)
-def shot():
-  print("getting closer")
+#def shot():
+#  print("getting closer")
     
 def pullthatshit():
   print("here we go")
-  shot()
   for submission in submissions:
     person=str(submission.author)
     print(person+"ok")
