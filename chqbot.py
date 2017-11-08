@@ -55,17 +55,22 @@ def pullthatshit():
     
     #person=submission.comments[0].author
         #nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
-    #try:
-      
-    
-    
-    
+
     try:
       cur= None
       cur= conn.cursor()
       cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
       rows=cur.fetchall()
       conn.commit()
+      dude=rows[0]
+      print(dude)
+      print(person)
+      if dude==person:
+        Print ("yes")
+        
+                  
+                  
+     
 
       #The user exists in the database and a result was returned
       for row in rows:
@@ -111,6 +116,7 @@ def pullthatshit():
       conn.commit()
       print("you got it bud")
       time.sleep(1)
+      
 
     except BaseException as e:
       if cur is not None:
