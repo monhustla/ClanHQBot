@@ -83,7 +83,7 @@ def pullthatshit():
       else:
         username=person
 
-    except (str(BaseException, IndexError)) as e:
+    except (BaseException, IndexError) as e:
       print ("Index Error")
       if cur is not None:
         conn.rollback()
