@@ -50,6 +50,7 @@ submissions=subreddit.new(limit=1)
 #  print("getting closer")
     
 def pullthatshit():
+  time.sleep(10)
   print("here we go")
   subreddit=bot.subreddit('space')
   submissions=subreddit.new(limit=1)
