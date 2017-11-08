@@ -151,9 +151,9 @@ def pullthatshit():
   #s.enter(5,1, pullthatshit, (sc,))
 #s.enter(80, 1, pullthatshit, (s,))
 #s.run()
-  pullthatshit()
+  #pullthatshit()
 #pullthatshit()  
-#schedule.every(.1).minutes.do(pullthatshit)
+schedule.every(.1).minutes.do(pullthatshit)
 #while 1:
 #  schedule.run_pending()
 #  time.sleep(.2)
