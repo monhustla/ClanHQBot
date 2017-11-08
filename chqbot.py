@@ -78,7 +78,7 @@ def pullthatshit():
         if dude==person:
           print ("This person exists, exiting")
           time.sleep(.1)
-          return rerun()
+          return pullthatshit()
           #pullthatshit()
           
           
