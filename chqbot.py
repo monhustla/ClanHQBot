@@ -138,6 +138,8 @@ def pullthatshit():
     finally:
       if cur is not None:
         cur.close()
+      time.sleep(.2)
+      schedule.every(.2).minutes.do(pullthatshit)
     return    
 
 #if any(x in text.lower() for x in keyword):
@@ -149,11 +151,11 @@ def pullthatshit():
 #s.run()
 
 
-schedule.every(.2).minutes.do(pullthatshit)
-while 1:
-  schedule.run_pending()
-  time.sleep(.2)
-  return
+#schedule.every(.2).minutes.do(pullthatshit)
+#while 1:
+#  schedule.run_pending()
+#  time.sleep(.2)
+  
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
