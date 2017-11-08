@@ -50,7 +50,7 @@ if db_url:
 def pullthatshit():
   time.sleep(10)
   print("here we go")
-  subreddit=bot.subreddit('space')
+  subreddit=bot.subreddit('redditgetsdrawn')
   submissions=subreddit.new(limit=1)
   for submission in submissions:
     person=str(submission.author)
