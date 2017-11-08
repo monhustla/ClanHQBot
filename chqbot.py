@@ -139,8 +139,8 @@ def pullthatshit():
       if cur is not None:
         cur.close()
       time.sleep(.2)
-      schedule.every(.2).minutes.do(pullthatshit)
-    return    
+      #schedule.every(.2).minutes.do(pullthatshit)
+    return pullthatshit()    
 
 #if any(x in text.lower() for x in keyword):
     #print(text+'\n'+'\n'+str(nice)+'\n'+person)
