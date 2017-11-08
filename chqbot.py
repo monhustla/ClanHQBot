@@ -84,7 +84,7 @@ def pullthatshit():
           
           
     except (BaseException, IndexError) as e:
-      print ("Index Error")
+      print (e)
       if cur is not None:
         conn.rollback()
         cur.close()
