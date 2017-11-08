@@ -55,7 +55,11 @@ def pullthatshit():
     
     #person=submission.comments[0].author
         #nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
-        
+    #try:
+     # "
+    
+    
+    
     try:
       cur= None
       cur= conn.cursor()
@@ -128,7 +132,7 @@ def pullthatshit():
 #s.run()
 
 
-schedule.every(.5).minutes.do(pullthatshit)
+schedule.every(.2).minutes.do(pullthatshit)
 while 1:
   schedule.run_pending()
   time.sleep(1)
