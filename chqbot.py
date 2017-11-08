@@ -51,6 +51,8 @@ submissions=subreddit.new(limit=1)
     
 def pullthatshit():
   print("here we go")
+  subreddit=bot.subreddit('space')
+  submissions=subreddit.new(limit=1)
   for submission in submissions:
     person=str(submission.author)
     print(person+"ok")
