@@ -71,7 +71,9 @@ def pullthatshit():
         print("Here is your person: "+ person)
         if dude==person:
           print ("This person exists, exiting")
+          break
           pullthatshit()
+          
           
           
     except (BaseException, IndexError) as e:
@@ -86,6 +88,7 @@ def pullthatshit():
       if cur is not None:
         conn.commit()
         cur.close()
+      
         
                   
           
