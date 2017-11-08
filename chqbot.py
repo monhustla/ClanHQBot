@@ -63,7 +63,7 @@ def pullthatshit():
       rows=cur.fetchall()
       conn.commit()
       dude=rows[0]
-      print("Here is your dude"+'\n'+dude)
+      print("Here is your dude"+'\n'+str(dude))
       print(person)
       if dude==person:
         Print ("yes")
