@@ -125,7 +125,7 @@ def pullthatshit():
 
       conn.commit()
       print("you got it bud")
-      time.sleep(1)
+      time.sleep(.5)
       
 
     except BaseException as e:
@@ -152,7 +152,7 @@ def pullthatshit():
 schedule.every(.2).minutes.do(pullthatshit)
 while 1:
   schedule.run_pending()
-  time.sleep(1)
+  time.sleep(.5)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
