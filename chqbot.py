@@ -152,11 +152,11 @@ def pullthatshit():
       if cur is not None:
         cur.close()
       time.sleep(10)  
-      return True  
+      return pullthatshit()
       #time.sleep(.2)
       #schedule.every(.2).minutes.do(pullthatshit)
           
-
+pullthatshit()
 #if any(x in text.lower() for x in keyword):
     #print(text+'\n'+'\n'+str(nice)+'\n'+person)
         #comment.reply('Mars is awesome')
@@ -166,7 +166,7 @@ def pullthatshit():
 #s.run()
   #pullthatshit()
 #pullthatshit()  
-schedule.every(.1).minutes.do(pullthatshit)
+#schedule.every(.1).minutes.do(pullthatshit)
 #while 1:
 #  schedule.run_pending()
 #  time.sleep(.2)
