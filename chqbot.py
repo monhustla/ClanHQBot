@@ -71,7 +71,7 @@ def pullthatshit():
         print("Here is your person: "+ person)
         if dude==person:
           print ("This person exists, exiting")
-          return
+          rerun()
           #pullthatshit()
           
           
@@ -160,7 +160,7 @@ def pullthatshit():
 #while 1:
 #  schedule.run_pending()
 #  time.sleep(.2)
-while True:
+def rerun():
   pullthatshit()
   
 
