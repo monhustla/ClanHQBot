@@ -168,10 +168,10 @@ def pullthatshit():
 #while 1:
 #  schedule.run_pending()
 #  time.sleep(.2)
-def rerun():
-  print("This is a start")
-  time.sleep(5)
-  pullthatshit()
+#def rerun():
+#  print("This is a start")
+#  time.sleep(5)
+#  pullthatshit()
 
 while True:
   time.sleep(5)
