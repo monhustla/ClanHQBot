@@ -162,7 +162,8 @@ while True:
   
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=os.environ['PORT'])
+  pullthatshit()
+  app.run(host='0.0.0.0',port=os.environ['PORT'])
 #except:
 #    print ('This did not work')
     #author=comments.author
