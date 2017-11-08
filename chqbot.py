@@ -88,7 +88,7 @@ def pullthatshit():
       if cur is not None:
         conn.rollback()
         cur.close()
-        print(e+"Something is wrong")
+        print("Something is wrong")
         
       
 
