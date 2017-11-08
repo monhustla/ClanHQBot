@@ -67,7 +67,7 @@ def pullthatshit():
       print("Here is your dude: "+ dude)
       print("Here is your person: "+ person)
       if dude==person:
-        Print ("yes")
+        print ("yes")
         
                   
                   
