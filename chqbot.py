@@ -162,6 +162,7 @@ def pullthatshit():
 #  schedule.run_pending()
 #  time.sleep(.2)
 def rerun():
+  print("This is a start")
   pullthatshit()
 
 while True:
