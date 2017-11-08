@@ -71,7 +71,7 @@ def pullthatshit():
         print("Here is your person: "+ person)
         if dude==person:
           print ("This person exists, exiting")
-        return True  
+        return pullthatshit() 
           
     except (BaseException, IndexError) as e:
       print ("Index Error")
