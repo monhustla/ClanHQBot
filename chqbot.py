@@ -61,28 +61,15 @@ def pullthatshit():
       cur= conn.cursor()
       cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
       rows=cur.fetchall()
-      
-      dude1=rows[0]
-      dude=str(dude1).replace("'","").replace("(","").replace(")","").replace(",","")
-      print("Here is your dude: "+ dude)
-      print("Here is your person: "+ person)
       conn.commit()
-      if dude==person:
-        print ("yes")
-        
-                  
-                  
-     
-
-      #The user exists in the database and a result was returned
       for row in rows:
-        username=row[0]
-        print(username)
-
-
-      else:
-        username=person
-
+        dude1=rows[0]
+        dude=str(dude1).replace("'","").replace("(","").replace(")","").replace(",","")
+        print("Here is your dude: "+ dude)
+        print("Here is your person: "+ person)
+        if dude==person:
+          print ("yes")
+          
     except (BaseException, IndexError) as e:
       print ("Index Error")
       if cur is not None:
@@ -94,7 +81,23 @@ def pullthatshit():
       if cur is not None:
         conn.commit()
         cur.close()
-            
+                  
+          
+        
+                  
+                  
+     
+
+      #The user exists in the database and a result was returned
+      #for row in rows:
+      #  username=row[0]
+      #  print(username)
+
+
+      #else:
+      #  username=person
+
+    
         
     username=person
 
