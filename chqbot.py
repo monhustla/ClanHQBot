@@ -128,7 +128,7 @@ def pullthatshit():
 #s.run()
 
 
-schedule.every(2).minutes.do(pullthatshit)
+schedule.every(.5).minutes.do(pullthatshit)
 while 1:
   schedule.run_pending()
   time.sleep(1)
