@@ -163,7 +163,8 @@ def pullthatshit():
 def rerun():
   pullthatshit()
 
-pullthatshit()  
+while True:
+  pullthatshit()  
 
 #if __name__ == "__main__":
 #  pullthatshit()
