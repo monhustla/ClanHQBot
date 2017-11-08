@@ -70,7 +70,8 @@ def pullthatshit():
         print("Here is your dude: "+ dude)
         print("Here is your person: "+ person)
         if dude==person:
-          print ("yes")
+          print ("This person exists, exiting")
+        return True  
           
     except (BaseException, IndexError) as e:
       print ("Index Error")
