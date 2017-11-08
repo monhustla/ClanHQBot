@@ -102,7 +102,7 @@ def pullthatshit():
       #else:
       #  username=person
 
-    
+    print("This is a new person, adding them to the database")
         
     username=person
 
