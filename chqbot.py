@@ -50,6 +50,8 @@ def shot():
   print("getting closer")
     
 def pullthatshit():
+  print("here we go")
+  shot()
   for submission in submissions:
     person=str(submission.author)
     print(person+"ok")
