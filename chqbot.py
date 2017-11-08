@@ -61,11 +61,12 @@ def pullthatshit():
       cur= conn.cursor()
       cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
       rows=cur.fetchall()
-      conn.commit()
+      
       dude1=rows[0]
       dude=str(dude1).replace("'","").replace("(","").replace(")","").replace(",","")
       print("Here is your dude: "+ dude)
       print("Here is your person: "+ person)
+      conn.commit()
       if dude==person:
         print ("yes")
         
