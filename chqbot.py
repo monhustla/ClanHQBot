@@ -118,8 +118,8 @@ def pullthatshit():
     print("This is a new person, adding them to the database")
         
     username=person
-    print(username)
-    bot.redditor(username).message('Test', 'this is just a test')
+    #print(username)
+    #bot.redditor(username).message('Test', 'this is just a test')
 
     info_one="Whatever"
 
