@@ -56,7 +56,7 @@ def pullthatshit():
     #person=submission.comments[0].author
         #nice=datetime.datetime.fromtimestamp(float(info)).isoformat()
     #try:
-     # "
+      
     
     
     
@@ -110,6 +110,7 @@ def pullthatshit():
 
       conn.commit()
       print("you got it bud")
+      time.sleep(1)
 
     except BaseException as e:
       if cur is not None:
