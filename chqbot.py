@@ -153,10 +153,12 @@ def pullthatshit():
 #s.run()
   #pullthatshit()
 #pullthatshit()  
-schedule.every(.1).minutes.do(pullthatshit)
+#schedule.every(.1).minutes.do(pullthatshit)
 #while 1:
 #  schedule.run_pending()
 #  time.sleep(.2)
+while True:
+  pullthatshit()
   
 
 if __name__ == "__main__":
