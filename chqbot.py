@@ -59,7 +59,7 @@ def pullthatshit():
     try:
       cur= None
       cur= conn.cursor()
-      cur.execute("""SELECT username FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
+      cur.execute("""SELECT username, info_one, info_two FROM reddit_userinfo WHERE username= %(username)s LIMIT 1""", {"username":person})
       rows=cur.fetchall()
       print(rows)
       conn.commit()
